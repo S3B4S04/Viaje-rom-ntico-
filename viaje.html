@@ -3,43 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>En el Universo</title>
+  <title>Nuestro Universo</title>
 
   <style>
     body {
       margin: 0;
-      background: radial-gradient(circle at bottom, #050014, #000);
+      height: 100vh;
       overflow: hidden;
       font-family: Arial, sans-serif;
+      background: radial-gradient(circle, #020024, #000);
       color: white;
-      text-align: center;
-      height: 100vh;
     }
 
-    h1 {
-      margin-top: 20px;
-      font-size: 22px;
-      color: #ff8df7;
-    }
-
-    a {
-      color: #00ffff;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    /* Palabras flotantes */
-    .palabra {
+    /* 🌠 Fondo estrellas animadas */
+    .stars {
       position: absolute;
-      font-size: 18px;
-      opacity: 0;
-      animation: viajar 6s infinite;
-      color: rgba(255,255,255,0.8);
+      width: 200%;
+      height: 200%;
+      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+      animation: moveStars 40s linear infinite;
+      opacity: 0.35;
+      z-index: -3;
     }
 
-    @keyframes viajar {
+    @keyframes moveStars {
+      from { transform: translate(0,0); }
+      to { transform: translate(-250px,-250px); }
+    }
+
+    /* 💘 Título */
+    h1 {
+      text-align: center;
+      margin-top: 25px;
+      color: pink;
+      text-shadow: 0 0 20px magenta;
+      font-size: 22px;
+    }
+
+    /* 🎶 Música texto */
+    .music {
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+
+    /* 💞 Palabras flotando */
+    .word {
+      position: absolute;
+      font-size: 22px;
+      opacity: 0;
+      animation: fly 7s infinite;
+      color: white;
+      text-shadow: 0 0 15px cyan;
+    }
+
+    @keyframes fly {
       0% {
-        transform: scale(0.2) translateZ(-500px);
+        transform: scale(0.2);
         opacity: 0;
       }
       50% {
@@ -51,41 +72,82 @@
       }
     }
 
-    /* Fotos */
-    .fotos {
+    /* 📸 Fotos */
+    .photos {
       position: absolute;
       bottom: 40px;
       width: 100%;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
     }
 
-    .fotos img {
-      width: 130px;
-      height: 170px;
-      border-radius: 20px;
-      border: 3px solid #ff4fd8;
-      box-shadow: 0 0 20px rgba(255, 0, 200, 0.6);
+    .photos img {
+      width: 150px;
+      height: 200px;
+      border-radius: 25px;
+      border: 2px solid pink;
+      box-shadow: 0 0 25px magenta;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .photos img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 50px cyan;
+    }
+
+    /* 💌 Mensaje final */
+    .final {
+      position: absolute;
+      bottom: 270px;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      color: pink;
+      text-shadow: 0 0 15px magenta;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 5px;
+      color: cyan;
+      text-decoration: none;
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>💖 En este universo... solo existimos tú y yo ✨</h1>
-  <a href="index.html">⬅ Volver al inicio</a>
+  <div class="stars"></div>
+
+  <h1>💘 En este universo… solo existimos tú y yo ✨</h1>
+  <div class="music">🎶 Música romántica activada…</div>
+
+  <!-- 🎶 Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+  </audio>
+
+  <a href="index.html">← Volver al inicio</a>
 
   <!-- Palabras románticas -->
-  <div class="palabra" style="top:20%; left:10%; animation-delay:0s;">Te amo</div>
-  <div class="palabra" style="top:40%; left:70%; animation-delay:1s;">Mi universo</div>
-  <div class="palabra" style="top:60%; left:30%; animation-delay:2s;">Siempre tú</div>
-  <div class="palabra" style="top:25%; left:50%; animation-delay:3s;">Juntos por siempre</div>
-  <div class="palabra" style="top:75%; left:60%; animation-delay:4s;">Eres mi estrella</div>
-  <div class="palabra" style="top:50%; left:15%; animation-delay:5s;">Te adoro</div>
+  <div class="word" style="top:20%; left:10%; animation-delay:0s;">Te amo 💖</div>
+  <div class="word" style="top:55%; left:40%; animation-delay:1s;">Princesa 👑</div>
+  <div class="word" style="top:35%; left:70%; animation-delay:2s;">Mi vida 🌙</div>
+  <div class="word" style="top:70%; left:15%; animation-delay:3s;">Te adoro 💕</div>
+  <div class="word" style="top:50%; left:60%; animation-delay:4s;">Siempre tú ✨</div>
+  <div class="word" style="top:25%; left:50%; animation-delay:5s;">Mi universo 💘</div>
 
-  <!-- Fotos -->
-  <div class="fotos">
+  <!-- 💌 Mensaje final -->
+  <div class="final">
+    🌹 Tú eres mi destino favorito… 🌹
+  </div>
+
+  <!-- 📸 Fotos -->
+  <div class="photos">
     <img src="foto1.jpg" alt="Foto 1">
     <img src="foto2.jpg" alt="Foto 2">
   </div>
