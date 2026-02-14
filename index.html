@@ -17,7 +17,7 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Estrellas */
+    /* Fondo de estrellas */
     body::before {
       content: "";
       position: fixed;
@@ -28,41 +28,52 @@
       z-index: -1;
     }
 
-    .boton {
-      width: 200px;
-      height: 200px;
+    /* Cohete */
+    .rocket {
+      font-size: 60px;
+      position: absolute;
+      top: 120px;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* Botón circular */
+    .btn {
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #ff4fd8, #7b2cff);
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 0 25px rgba(255, 0, 200, 0.6);
+      background: rgba(0, 255, 255, 0.15);
+      border: 2px solid cyan;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: transform 0.3s;
+      text-align: center;
       color: white;
       font-size: 20px;
-      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 30px cyan;
+      transition: 0.3s;
+      text-decoration: none;
     }
 
-    .boton:hover {
-      transform: scale(1.1);
-    }
-
-    .cohete {
-      font-size: 45px;
-      margin-bottom: 10px;
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 50px magenta;
     }
   </style>
 </head>
 
 <body>
 
-  <button class="boton" onclick="window.location.href='viaje.html'">
-    <div class="cohete">🚀</div>
-    ¿Iniciamos el viaje?
-  </button>
+  <div class="rocket">🚀</div>
+
+  <a class="btn" href="viaje.html">
+    ¿Iniciamos el viaje? 💖
+  </a>
 
 </body>
 </html>
