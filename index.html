@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viaje Espacial</title>
+  <title>Viaje Romántico</title>
 
   <style>
     body {
@@ -12,84 +12,57 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle, #05051a, #000);
+      background: radial-gradient(circle at top, #09001a, #000);
       overflow: hidden;
-      color: white;
+      font-family: Arial, sans-serif;
     }
 
-    /* Fondo estrellas */
+    /* Estrellas */
     body::before {
       content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: url("https://i.ibb.co/2YJ7L8r/stars.png");
-      opacity: 0.6;
-      animation: mover 80s linear infinite;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+      opacity: 0.4;
+      z-index: -1;
     }
 
-    @keyframes mover {
-      from { transform: translate(0,0); }
-      to { transform: translate(-600px,-600px); }
-    }
-
-    /* Contenedor */
-    .contenedor {
-      position: relative;
-      text-align: center;
-      z-index: 2;
-    }
-
-    /* Cohete animado */
-    .cohete {
-      font-size: 80px;
-      animation: flotar 2s ease-in-out infinite;
-      margin-bottom: 25px;
-    }
-
-    @keyframes flotar {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    /* Botón circular */
     .boton {
       width: 200px;
       height: 200px;
       border-radius: 50%;
+      background: linear-gradient(145deg, #ff4fd8, #7b2cff);
       border: none;
-      background: rgba(0, 255, 255, 0.15);
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(255, 0, 200, 0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s;
       color: white;
       font-size: 20px;
       font-weight: bold;
-      cursor: pointer;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 25px cyan, 0 0 60px rgba(0,255,255,0.4);
-      transition: transform 0.3s ease;
     }
 
     .boton:hover {
       transform: scale(1.1);
+    }
+
+    .cohete {
+      font-size: 45px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="contenedor">
+  <button class="boton" onclick="window.location.href='viaje.html'">
     <div class="cohete">🚀</div>
-
-    <button class="boton" onclick="iniciarViaje()">
-      ¿Iniciamos el viaje?
-    </button>
-  </div>
-
-  <script>
-    function iniciarViaje() {
-      window.location.href = "viaje.html";
-    }
-  </script>
+    ¿Iniciamos el viaje?
+  </button>
 
 </body>
 </html>
