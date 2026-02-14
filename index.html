@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viaje Romántico</title>
+  <title>Inicio del Viaje</title>
 
   <style>
     body {
       margin: 0;
       height: 100vh;
       overflow: hidden;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -18,34 +18,41 @@
       color: white;
     }
 
+    /* 🌠 Fondo estrellas animadas */
     .stars {
       position: absolute;
       width: 200%;
       height: 200%;
       background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
       animation: moveStars 35s linear infinite;
-      opacity: 0.35;
+      opacity: 0.45;
       z-index: -2;
     }
 
     @keyframes moveStars {
+      from { transform: translate(0,0); }
       to { transform: translate(-250px,-250px); }
     }
 
-    /* 🚀 Cohete */
+    /* 🚀 Cohete flotando */
     .rocket {
-      font-size: 80px;
+      font-size: 85px;
       position: absolute;
-      top: 120px;
-      transition: 1s;
+      top: 110px;
+      animation: float 2.5s infinite ease-in-out;
     }
 
-    /* Botón */
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+    }
+
+    /* 💖 Botón circular romántico */
     .btn {
-      width: 210px;
-      height: 210px;
+      width: 230px;
+      height: 230px;
       border-radius: 50%;
-      background: rgba(255, 0, 150, 0.15);
+      background: rgba(255, 0, 160, 0.18);
       border: 2px solid pink;
       box-shadow: 0 0 50px magenta;
       display: flex;
@@ -54,49 +61,55 @@
       text-align: center;
       font-size: 22px;
       cursor: pointer;
+      transition: 0.4s;
       text-decoration: none;
       color: white;
-      transition: 0.4s;
+      padding: 20px;
+      line-height: 1.4;
     }
 
     .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 80px cyan;
+      transform: scale(1.15);
+      box-shadow: 0 0 90px cyan;
     }
 
+    /* 💌 Texto abajo */
     .subtitle {
       position: absolute;
-      bottom: 40px;
+      bottom: 45px;
       font-size: 16px;
+      opacity: 0.85;
+      text-align: center;
       color: pink;
-      opacity: 0.8;
+      text-shadow: 0 0 10px magenta;
+    }
+
+    /* ✨ Pequeño efecto romántico */
+    .subtitle span {
+      color: cyan;
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- 🌠 Estrellas -->
   <div class="stars"></div>
 
-  <div class="rocket" id="rocket">🚀</div>
+  <!-- 🚀 Cohete -->
+  <div class="rocket">🚀</div>
 
-  <a class="btn" onclick="launch()">
-    ¿Iniciamos el viaje? 💘
+  <!-- 💖 Botón -->
+  <a class="btn" href="viaje.html">
+    ¿Iniciamos el viaje<br>
+    juntos? 💘
   </a>
 
+  <!-- 💌 Mensaje -->
   <div class="subtitle">
-    Un universo romántico solo para ustedes ✨
+    Un universo romántico solo para <span>nosotros</span> ✨
   </div>
-
-  <script>
-    function launch() {
-      document.getElementById("rocket").style.transform =
-        "translateY(-500px) scale(1.3)";
-      setTimeout(() => {
-        window.location.href = "viaje.html";
-      }, 1200);
-    }
-  </script>
 
 </body>
 </html>
