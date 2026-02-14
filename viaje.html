@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viaje Romántico</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Fondo estrellas */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: url("https://i.ibb.co/2YJ7L8r/stars.png");
+      opacity: 0.5;
+      animation: mover 90s linear infinite;
+    }
+
+    @keyframes mover {
+      from { transform: translate(0,0); }
+      to { transform: translate(-700px,-700px); }
+    }
+
+    /* Contenedor nave */
+    .espacio {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      perspective: 900px;
+      overflow: hidden;
+    }
+
+    /* Mensaje arriba */
+    .mensaje {
+      position: absolute;
+      top: 25px;
+      width: 100%;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: pink;
+      z-index: 10;
+      text-shadow: 0 0 20px rgba(255,0,200,0.8);
+    }
+
+    /* Palabras flotando */
+    .palabra {
+      position: absolute;
+      font-size: 30px;
+      font-weight: bold;
+      color: rgba(255,255,255,0.85);
+      animation: viaje 7s linear infinite;
+    }
+
+    @keyframes viaje {
+      from {
+        transform: translateZ(-1200px);
+        opacity: 0;
+      }
+      to {
+        transform: translateZ(400px);
+        opacity: 1;
+      }
+    }
+
+    /* Fotos abajo */
+    .fotos {
+      position: absolute;
+      bottom: 25px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    .fotos img {
+      width: 150px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 25px;
+      border: 2px solid rgba(255,255,255,0.6);
+      box-shadow: 0 0 25px rgba(255,0,255,0.7);
+      transition: transform 0.4s;
+    }
+
+    .fotos img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Botón volver */
+    .volver {
+      position: absolute;
+      top: 80px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .volver a {
+      color: cyan;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="espacio">
+
+    <div class="mensaje">
+      💘 En este universo... solo existimos tú y yo ✨
+    </div>
+
+    <div class="volver">
+      <a href="index.html">⬅ Volver al inicio</a>
+    </div>
+
+    <!-- 💖 Palabras románticas -->
+    <div class="palabra" style="top:20%; left:15%; animation-delay:0s;">Te amo</div>
+    <div class="palabra" style="top:35%; left:70%; animation-delay:1s;">Princesa</div>
+    <div class="palabra" style="top:60%; left:30%; animation-delay:2s;">Te adoro</div>
+    <div class="palabra" style="top:50%; left:80%; animation-delay:3s;">Mi vida</div>
+    <div class="palabra" style="top:75%; left:10%; animation-delay:4s;">Siempre tú</div>
+    <div class="palabra" style="top:40%; left:40%; animation-delay:5s;">Mi universo</div>
+    <div class="palabra" style="top:65%; left:65%; animation-delay:6s;">Juntos por siempre</div>
+
+    <!-- 📸 Tus fotos -->
+    <div class="fotos">
+      <img src="foto1.jpg" alt="Nosotros 1">
+      <img src="foto2.jpg" alt="Nosotros 2">
+    </div>
+
+  </div>
+
+</body>
+</html>
